@@ -61,7 +61,7 @@ var task = function(win, info, settings, no, callback) {
             monitoring: true,
             user_data:
               '#!/bin/bash \n' +
-              'yum install squid wget httpd-tools -y &&' +
+              'yum install squid wget httpd-tools openssl openssl-devel -y &&' +
               'touch /etc/squid/passwd &&' +
               `htpasswd -b /etc/squid/passwd ${info.username} ${info.password} &&` +
               'wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/dzt/easy-proxy/master/confg/userpass/squid.conf --no-check-certificate &&' +
